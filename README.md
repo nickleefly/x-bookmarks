@@ -13,10 +13,10 @@ Install from marketplace:
 
 ```bash
 /plugin marketplace add nickleefly/xyl-claude-skills
-/plugin install x-bookmarks@xyl-marketplace
-/plugin install substack@xyl-marketplace
-npx skills add x-bookmarks@xyl-marketplace
-npx skills add substack@xyl-marketplace
+/plugin install x-bookmarks@xyl-claude-skills
+/plugin install substack@xyl-claude-skills
+npx skills add x-bookmarks@xyl-claude-skills
+npx skills add substack@xyl-claude-skills
 ```
 
 ## License
