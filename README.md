@@ -4,7 +4,7 @@ Collection of Claude Code skills for X/Twitter bookmarks export and Substack pub
 
 ## Installation
 
-### Claude Code (via Plugin Marketplace)
+### Quick Install (Recommended)
 
 In Claude Code, register the marketplace first:
 
@@ -15,36 +15,54 @@ In Claude Code, register the marketplace first:
 Then install the plugin:
 
 ```bash
-/plugin install xyl-claude-skills@xyl-claude-skills
+/plugin install content-skills@xyl-claude-skills
 ```
 
 ### Verify Installation
 
-Check that commands appear:
+Check that skills appear:
 
 ```bash
 /help
 ```
 
-You should see:
-- `/xyl-claude-skills:x-bookmarks` - Export X/Twitter bookmarks to markdown
-- `/xyl-claude-skills:substack` - Publish newsletter articles to Substack
+## Available Skills
 
-## What's Inside
+### Content Skills
 
-### Skills Library
+| Skill | Description | Command |
+|-------|-------------|---------|
+| [x-bookmarks](skills/x-bookmarks/SKILL.md) | Export X/Twitter bookmarks to markdown using the bird CLI | `/x-bookmarks` |
+| [substack](skills/substack/SKILL.md) | Publish newsletter articles to Substack as drafts | `/substack` |
 
-| Skill | Description |
-|-------|-------------|
-| [x-bookmarks](skills/x-bookmarks/SKILL.md) | Export X/Twitter bookmarks to markdown using the bird CLI |
-| [substack](skills/substack/SKILL.md) | Publish newsletter articles to Substack as drafts from Markdown |
+#### x-bookmarks
 
-### Commands
+Export X/Twitter bookmarks to markdown format.
 
-| Command | Description |
-|---------|-------------|
-| `/x-bookmarks` | Export X/Twitter bookmarks |
-| `/substack` | Publish to Substack |
+```bash
+/x-bookmarks
+```
+
+Prerequisites:
+- Install `bird`: `npm install -g @steipete/bird`
+- Log into X in browser for cookie auth
+
+#### substack
+
+Publish newsletter articles to Substack as drafts from Markdown.
+
+```bash
+/substack path/to/article.md
+```
+
+Prerequisites:
+- Set environment variables in `~/.bashrc`:
+  ```bash
+  export SUBSTACK_EMAIL="your-email@example.com"
+  export SUBSTACK_PASSWORD="your-password"
+  export SUBSTACK_PUBLICATION_URL="https://yourpub.substack.com"
+  ```
+- Install: `pip install python-substack`
 
 ## License
 
