@@ -1,5 +1,5 @@
 ---
-name: substack-publisher
+name: substack
 description: Publish newsletter articles to Substack as drafts. Use when "publish to substack", "create substack draft", "post newsletter to substack", "substack draft".
 allowed-tools: Read, Glob, Bash, AskUserQuestion
 ---
@@ -17,14 +17,14 @@ Takes a Markdown newsletter article and creates a beautiful draft in Substack, p
 1. **Set a password on your Substack account** (if using magic links):
    - Go to Substack Settings → Account → Set password
 
-2. **Add environment variables** to `~/.zshrc`:
+2. **Add environment variables** to `~/.bashrc`:
    ```bash
    export SUBSTACK_EMAIL="your-email@example.com"
    export SUBSTACK_PASSWORD="your-password"
    export SUBSTACK_PUBLICATION_URL="https://yourpub.substack.com"
    ```
 
-3. **Reload shell**: `source ~/.zshrc`
+3. **Reload shell**: `source ~/.bashrc`
 
 4. **Install the library** (first time only):
    ```bash
@@ -35,7 +35,7 @@ Takes a Markdown newsletter article and creates a beautiful draft in Substack, p
 
 Run the auth check before first use:
 ```bash
-python3 ~/Documents/xyl-claude-skills/skills/substack/tools/check_auth.py
+python3 xyl-claude-skills/skills/substack/tools/check_auth.py
 ```
 
 ## Instructions
@@ -92,7 +92,7 @@ If they want to edit, let them provide new title/subtitle, then confirm again.
 Run the publish script:
 
 ```bash
-python3 skills/substack-publisher/tools/publish_draft.py \
+python3 skills/substack/tools/publish_draft.py \
   --file "/path/to/article.md" \
   --title "The Title" \
   --subtitle "The Subtitle"
