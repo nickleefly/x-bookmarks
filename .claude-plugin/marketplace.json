@@ -1,20 +1,31 @@
 {
   "name": "xyl-claude-skills",
-  "description": "Skills for X/Twitter bookmarks export and Substack publishing",
   "owner": {
     "name": "Nick Li",
     "email": "nickleefly@gmail.com"
   },
+  "metadata": {
+    "description": "Skills for X/Twitter bookmarks export and Substack publishing",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
-      "name": "xyl-claude-skills",
-      "description": "X/Twitter bookmarks export and Substack publishing tools",
-      "version": "1.0.0",
+      "name": "x-bookmarks",
+      "description": "X/Twitter bookmarks export tools",
       "source": "./",
-      "author": {
-        "name": "Nick Li",
-        "email": "nickleefly@gmail.com"
-      }
+      "strict": false,
+      "skills": [
+        "./skills/x-bookmarks"
+      ]
+    },
+    {
+      "name": "substack",
+      "description": "Substack newsletter publishing tools",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/substack"
+      ]
     }
   ]
 }
