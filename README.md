@@ -15,7 +15,8 @@ In Claude Code, register the marketplace first:
 Then install the plugin:
 
 ```bash
-/plugin install content-skills@xyl-claude-skills
+/plugin install x-bookmarks@xyl-claude-skills
+/plugin install substack@xyl-claude-skills
 ```
 
 ### Verify Installation
