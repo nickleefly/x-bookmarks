@@ -15,6 +15,11 @@ Install from marketplace:
 /plugin marketplace add nickleefly/xyl-claude-skills
 /plugin install x-bookmarks@xyl-claude-skills
 /plugin install substack@xyl-claude-skills
+```
+
+Recommended to use the plugin instead of the skills
+
+```bash
 npx skills add x-bookmarks@xyl-claude-skills
 npx skills add substack@xyl-claude-skills
 ```
