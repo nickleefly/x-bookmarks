@@ -48,16 +48,37 @@ bird bookmarks -n 50 --json --auth-token $AUTH_TOKEN --ct0 $CT0 > bookmarks.json
 bird bookmarks --folder-id <id> --json --auth-token $AUTH_TOKEN --ct0 $CT0 > bookmarks.json
 ```
 
-**Note:** Bird CLI doesn't support filtering by date. To get bookmarks from a specific date range, fetch all bookmarks and filter programmatically by the `created_at` field in the JSON.
+### 3. Filter by Date (Optional)
 
-### 3. Convert to Markdown
+Bird CLI doesn't support date filtering, so use the filter script:
 
 ```bash
-node convert-bookmarks-to-md.js [input.json] [output.md]
+# Filter to bookmarks from a specific date onward
+node filter-bookmarks.js bookmarks.json --from 2026-01-15 -o filtered.json
+
+# Filter to a date range
+node filter-bookmarks.js bookmarks.json --from 2026-01-15 --to 2026-01-22 -o filtered.json
+
+# Filter up to a specific date
+node filter-bookmarks.js bookmarks.json --to 2026-01-20 -o filtered.json
+```
+
+### 4. Convert to Markdown
+
+```bash
+# Basic conversion
+node convert-bookmarks-to-md.js bookmarks.json
+
+# With date filtering (built-in)
+node convert-bookmarks-to-md.js bookmarks.json --from 2026-01-15 -o weekly.md
+
+# Full example with date range
+node convert-bookmarks-to-md.js bookmarks.json --from 2026-01-15 --to 2026-01-22 -o jan-week3.md
 ```
 
 - Input defaults to `bookmarks.json`
 - Output defaults to `bookmarks-[YYYY-MM-DD].md`
+- Dates use `YYYY-MM-DD` format
 
 ## Troubleshooting
 
