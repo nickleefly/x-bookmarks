@@ -10,20 +10,12 @@
   },
   "plugins": [
     {
-      "name": "x-bookmarks",
-      "description": "Export X/Twitter bookmarks to markdown using the bird CLI",
+      "name": "xyl-skills",
+      "description": "Skills for X/Twitter bookmarks export and Substack publishing",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/x-bookmarks"
-      ]
-    },
-    {
-      "name": "substack",
-      "description": "Publish newsletter articles to Substack as drafts",
-      "source": "./",
-      "strict": false,
-      "skills": [
+        "./skills/x-bookmarks",
         "./skills/substack"
       ]
     }
